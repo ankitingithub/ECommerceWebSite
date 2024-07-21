@@ -1,17 +1,6 @@
-import { useState } from "react";
 import "./Header.css";
 
-function Header() {
-  const [showCart, setShowCart] = useState(false);
-
-  function openCart() {
-    setShowCart(true);
-  }
-
-  function closeCart() {
-    setShowCart(false);
-  }
-
+function Header({openCart}) {
   return (
     <div className="header">
       <h1>my react store</h1>
@@ -20,11 +9,6 @@ function Header() {
           Cart
         </button>
       </div>
-      {showCart && (
-        <div className="backdrop" onClick={closeCart}>
-          <div className="modal">Hello from cart </div>
-        </div>
-      )}
     </div>
   );
 }
